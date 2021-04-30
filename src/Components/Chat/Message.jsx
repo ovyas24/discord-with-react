@@ -1,19 +1,19 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
 import './css/Message.css'
-function Message() {
+function Message({message="somthin", timestamp="time", user}) {
     return (
         <div className="message">
-            <Avatar />
+            <Avatar src={user.photo} />
             <div className="message__info">
                 <h4>
-                    @the.ome.vyas
+                    {user.displayName}
                     <span className="message__timestamp">
-                        time_stamp
+                        {new Date(timestamp?.toDate()).toUTCString()}
                     </span>
                 </h4>
                 <p>
-                    Message
+                    {message}
                 </p>
             </div>
         </div>
