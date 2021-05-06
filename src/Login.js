@@ -9,6 +9,10 @@ function Login() {
         //login
         auth.signInWithPopup(provider).catch(err => alert(err.message))
     }
+
+    const redirectGithub = () => {
+        window.location = "https://github.com/ovyas24/discord-with-react"
+    } 
     return (
         <div className="login">
             <div className="login__logo">
@@ -18,6 +22,8 @@ function Login() {
             {/* <div className="login__logo">
             </div> */}
             <Button onClick={signIn}>Sign In</Button>
+            <br />
+            <Button onClick={redirectGithub}>Check out Code</Button>
         </div>
     )
 }
